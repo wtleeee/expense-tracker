@@ -1,0 +1,120 @@
+/* Expense List Container */
+.expense-list {
+    font-family: 'Poppins', sans-serif;
+    width: 100%;
+    margin-top: var(--spacing);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Table Heading */
+.table-heading {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 0;
+    background-color: var(--primary-color);
+    color: var(--button-text);
+    font-weight: bold;
+    border-bottom: 2px solid var(--dark-gray);
+    text-align: center;
+}
+
+.heading-description,
+.heading-amount,
+.heading-date,
+.heading-delete {
+    flex: 1;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Adjusted individual column styles for alignment */
+.heading-description {
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.heading-amount {
+    justify-content: center;
+    text-align: center;
+}
+
+.heading-date {
+    justify-content: center;
+    text-align: center;
+}
+
+.heading-delete {
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* Expense Item Rows */
+.expense-item {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--input-border);
+}
+
+.expense-description {
+    font-weight: 600;
+    flex: 3;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    padding-left: 20px;
+}
+
+.expense-amount-2 {
+    flex: 2;
+    font-weight: 600;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left: -180px;
+}
+
+.expense-date {
+    flex: 2;
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.delete-button-container {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    text-align: right;
+    padding-right: 20px;
+}
+
+/* Delete Button */
+.delete-button {
+    background-color: #e74c3c;
+    color: #ffffff;
+    border: none;
+    padding: 6px 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.delete-button:hover {
+    background-color: #c0392b;
+}
