@@ -111,16 +111,121 @@ select {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-  .filter-container {
-    flex-direction: column;
+
+  html,
+  body {
+    font-size: 16px;
+    padding: 1rem;
   }
 
-  .expense-details {
+  button {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  input,
+  select {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  .container,
+  .home-container,
+  .dashboard-container,
+  .expenseform-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 20px;
+    margin: 10px 0;
+  }
+
+  .filter-container,
+  .expense-details,
+  .sort-container {
     flex-direction: column;
     gap: 10px;
   }
 
-  .sort-container {
-    justify-content: flex-start;
+  .expenses-table,
+  .expense-list {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .expenses-table th,
+  .expenses-table td {
+    padding: 8px;
+  }
+
+  .expenseform-container input[type="text"],
+  .expenseform-container input[type="number"],
+  .expenseform-container input[type="date"],
+  .expenseform-container select {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 15px;
+  }
+
+  .expense-item {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.4rem;
+  }
+
+  .user-section,
+  .filter-container,
+  .expense-details {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  body {
+    font-size: 14px;
+  }
+
+  .dashboard-container,
+  .container {
+    padding: 15px;
+  }
+
+  h1,
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  button {
+    font-size: 12px;
+    padding: 8px 12px;
+  }
+
+  input,
+  select,
+  label {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .expenses-table th,
+  .expenses-table td {
+    font-size: 12px;
+    padding: 6px;
+  }
+
+  .expense-item {
+    padding: 10px;
+  }
+
+  .expense-description {
+    font-size: 14px;
   }
 }
