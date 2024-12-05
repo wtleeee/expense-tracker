@@ -1,0 +1,66 @@
+/* Toastify Base Styles */
+.Toastify__toast-container {
+    z-index: 10000;
+}
+
+.Toastify__toast {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 8px;
+    box-shadow: 0px 8px 30px var(--container-shadow);
+    color: var(--text-color);
+    background-color: var(--container-bg);
+    padding: 15px;
+    border: 1px solid var(--input-border);
+    transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.Toastify__toast--success {
+    border-left: 6px solid #3cb371;
+    /* Green success indicator */
+    background-color: var(--input-bg);
+    /* Matches your container */
+}
+
+.Toastify__toast--error {
+    border-left: 6px solid #d64545;
+    /* Red error indicator */
+    background-color: var(--input-bg);
+}
+
+.Toastify__close-button {
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+.Toastify__close-button:hover {
+    opacity: 1;
+}
+
+/* Light Theme */
+body:not(.dark) .Toastify__toast {
+    color: var(--text-color);
+    background-color: var(--container-bg);
+    border: 1px solid var(--dark-gray);
+}
+
+/* Dark Theme */
+body.dark .Toastify__toast {
+    color: var(--light-gray);
+    background-color: var(--dark-gray);
+    border: 1px solid var(--light-gray);
+}
+
+.Toastify__toast-body {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.5;
+    color: inherit;
+}
+
+/* Toast Container Position Overrides (Optional) */
+.Toastify__toast-container--top-right {
+    top: 1rem;
+    right: 1rem;
+}
