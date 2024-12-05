@@ -35,7 +35,7 @@ function ExpenseTrackerForm({ addExpenses, closeOverlay }) {
 
   return (
     <div className='expenseform-container'>
-      <h2>Enter expense details:</h2>
+      <h3>Enter expense details:</h3>
       <form onSubmit={handleExpense}>
         <div>
           <label htmlFor='text'>Description</label>

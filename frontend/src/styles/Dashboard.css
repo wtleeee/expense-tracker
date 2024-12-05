@@ -15,10 +15,18 @@
     border-radius: 0;
 }
 
-/* Divider */
 .divider {
     margin: var(--spacing) 0;
     border-top: 2px solid var(--input-border);
     background-color: var(--input-border);
     height: 1px;
+}
+
+.dashboard-container .chart-container {
+    min-height: 400px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
 }

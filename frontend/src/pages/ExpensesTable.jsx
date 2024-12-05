@@ -19,7 +19,7 @@ function ExpensesTable({ expenses, handDeleteExpense }) {
                         <div className='expense-description'>{expense.text}</div>
                         <div className='expense-amount-2'
                             style={{
-                                color: expense.amount > 0 ? '#1aff1a' : '#e74c3c'
+                                color: expense.amount > 0 ? '#3cb371' : '#d64545'
                             }}
                         >
                             {expense.amount}

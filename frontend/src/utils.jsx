@@ -1,4 +1,3 @@
-import {dotenv} from 'dotenv';
 import { toast } from 'react-toastify';
 
 export const handleSuccess = (msg) => {

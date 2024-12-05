@@ -1,48 +1,60 @@
 .expenseform-container {
-    display: block;
+    max-width: 700px;
+    background-color: var(--container-bg);
+    margin: auto;
+    margin-top: var(--spacing);
+    margin-bottom: var(--spacing);
+    width: 90%;
+    overflow-y: auto;
+    padding: var(--spacing);
+    box-shadow: 0px 4px 10px var(--container-shadow);
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: var(--text-color);
+    border-radius: 0;
 }
 
+/* Inputs and Select Elements */
 .expenseform-container input[type="text"],
 .expenseform-container input[type="number"],
 .expenseform-container input[type="date"],
 .expenseform-container select {
-    display: block;
-    width: 60%;
+    width: 90%;
     padding: 12px;
     font-size: 16px;
     color: var(--text-color);
     background-color: var(--input-bg);
     border: 2px solid var(--input-border);
+    border-radius: 5px;
     outline: none;
-    margin-bottom: 20px;
     font-family: 'Poppins', sans-serif;
     transition: background-color 0.3s, border-color 0.3s;
-    margin-left: 20%;
 }
 
-/* Form Labels */
+.expenseform-container h3 {
+    color: --var(--input-bg);
+    font-size: x-large;
+}
+
+/* Labels */
 .expenseform-container label {
     font-weight: 500;
     font-size: 16px;
     color: var(--text-color);
-    margin-bottom: 10px;
-    margin-left: 20%;
-    display: block;
+    align-self: flex-start;
 }
 
-/* Form Button */
+/* Submit Button */
 .expenseform-container button[type="submit"] {
-    width: 50%;
-    padding: 20px;
-    font-size: 16px;
+    width: 100%;
+    padding: 16px;
+    font-size: 18px;
     font-weight: 600;
     color: var(--button-text);
     background-color: var(--button-bg);
     border: 2px solid transparent;
     cursor: pointer;
     transition: background-color 0.3s, border-color 0.3s;
-    margin-left: 25%;
-    margin-bottom: 20px;
 }
 
 .expenseform-container button[type="submit"]:hover {
@@ -50,6 +62,18 @@
     border-color: var(--dark-slate);
 }
 
-h2 {
-    text-align: center;
+/* Input Placeholder */
+.expenseform-container input::placeholder {
+    font-size: 14px;
+    font-style: italic;
+    color: var(--text-color);
+    opacity: 0.6;
+}
+
+/* General container for the entire form */
+.expenseform-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
 }

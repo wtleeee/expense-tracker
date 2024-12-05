@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { APIUrl, handleError, handleSuccess } from '../utils';
-import '../styles/Login.css'
 
 function Login() {
 
@@ -59,7 +58,8 @@ function Login() {
 
     return (
         <div className='container'>
-            <h1>Login</h1>
+            <h1>Expense Tracker</h1>
+            <h2>Login</h2>
             <form onSubmit={handleLogin}>
                 <div>
                     <label htmlFor='email'>Email</label>

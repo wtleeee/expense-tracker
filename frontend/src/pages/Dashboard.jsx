@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Pie, Line } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend } from 'chart.js';
 import '../styles/Dashboard.css';
@@ -7,6 +7,16 @@ import '../styles/Dashboard.css';
 ChartJS.register(ArcElement, LineElement, PointElement, CategoryScale, LinearScale, Tooltip, Legend);
 
 function Dashboard({ filteredExpenses }) {
+  // usestates for showing charts
+  const [showLine, setShowLine] = useState(false);
+  const [showPie, setShowPie] = useState(false);
+
+  const pieOptions = {
+    maintainAspectRatio: false,
+  };
+  const lineOptions = {
+    maintainAspectRatio: false,
+  };
 
   const data_pie = {
     labels: ['Housing', 'Groceries', 'Transportation', 'Health', 'Debt Payments', 'Entertainment', 'Clothing', 'Other'],
@@ -95,14 +105,33 @@ function Dashboard({ filteredExpenses }) {
       },
     ],
   };
-
-
+  //toggling charts
+  const toggleLineChart = () => {
+    setShowLine(!showLine); // Toggle the visibility of the line chart
+    setShowPie(false);
+  };
+  const togglePieChart = () => {
+    setShowPie(!showPie); // Toggle the visibility of the pie chart
+    setShowLine(false);
+  };
   return (
     <div className="dashboard-container">
       <h3>Expense Breakdown</h3>
-      <Line data={data_line} />
+      <button onClick={toggleLineChart}>View by Day Trend</button>
+      <button onClick={togglePieChart}>View by Category</button>
       <div className='divider'></div>
-      <Pie data={data_pie} />
+      <div className='charts-container'>
+        {showLine && (
+          <div>
+            <Line data={data_line} options={lineOptions} />
+          </div>
+        )}
+        {showPie && (
+          <div>
+            <Pie data={data_pie} options={pieOptions} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }

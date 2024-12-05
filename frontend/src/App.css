@@ -1,9 +1,17 @@
 /* Import Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Poppins:wght@300;400;600&display=swap');
 
+::before,
+::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 /* Light Theme */
 :root {
   --primary-color: #feda6a;
+  --dark-yellow: #d4a747;
   --light-gray: #d4d4dc;
   --dark-gray: #393f4d;
   --dark-slate: #1d1e22;
@@ -18,6 +26,7 @@
   --container-bg: #ffffff;
   --container-shadow: rgba(0, 0, 0, 0.1);
   --spacing: 1.8rem;
+  --h2-color: rgba(128, 128, 128, 0.718);
 }
 
 /* Dark Theme */
@@ -26,33 +35,124 @@ body.dark {
   --text-color: var(--light-gray);
   --input-bg: var(--dark-gray);
   --input-border: var(--light-gray);
-  --button-bg: var(--primary-color);
-  --button-hover-bg: #ffd24c;
+  --button-bg: var(--dark-yellow);
+  --button-hover-bg: #c9ae78;
   --button-text: var(--dark-slate);
   --container-bg: var(--dark-gray);
   --container-shadow: rgba(0, 0, 0, 0.7);
+  --h2-color: rgba(172, 172, 172, 0.842);
 }
 
+/* general styles */
 html,
 body {
-  height: 100%;
-  width: 100%;
+  height: auto;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
   background-color: var(--bg-color);
   color: var(--text-color);
   font-family: 'Montserrat', sans-serif;
   font-size: 18px;
   line-height: 1.8;
+  box-sizing: border-box;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  transition: background-color 0.3s, color 0.3s;
-  padding: var(--spacing);
   min-height: 100vh;
-  padding-bottom: 500px;
+  /* Ensure it covers the viewport if content is small */
+}
+
+.App {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+span {
+  font-size: 16px;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+span a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+span a:hover {
+  text-decoration: underline;
+}
+
+h2 {
+  text-align: center;
+  color: var(--h2-color);
+}
+
+.custom-hr {
+  border: none;
+  border-top: 2px solid var(--button-hover-bg);
+  margin: 20px 0;
+  width: 100%;
+  opacity: 0.8;
 }
 
 
+/* container */
+.container {
+  margin-top: 100px;
+  background-color: var(--container-bg);
+  padding: 40px 50px;
+  border: 2px solid var(--dark-gray);
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0px 8px 30px var(--container-shadow);
+  transition: background-color 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.container input {
+  width: calc(100% - 4px);
+  font-size: 18px;
+  font-weight: 400;
+  padding: 12px 14px;
+  border: 2px solid var(--input-border);
+  color: var(--text-color);
+  background-color: var(--input-bg);
+  margin: 0 auto;
+}
+
+.container>h1 {
+  font-size: 36px;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  color: var(--text-color);
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 1px;
+}
+
+.container>form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing);
+}
+
+.container div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* button, input, select */
 button {
   background-color: var(--button-bg);
   color: var(--button-text);
@@ -67,10 +167,26 @@ button {
   margin-bottom: 20px;
 }
 
+button[type="submit"] {
+  font-size: 18px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  padding: 16px;
+  text-transform: uppercase;
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  border: 2px solid transparent;
+  transition: background-color 0.3s, border-color 0.3s;
+}
+
 button:last-child {
   margin-right: 0;
 }
 
+button[type="submit"]:hover {
+  background-color: var(--button-hover-bg);
+  border-color: var(--dark-slate);
+}
 
 button:hover {
   background-color: var(--button-hover-bg);
@@ -101,131 +217,10 @@ input::placeholder {
 }
 
 select {
-  padding: 12px;
+  padding: 10px;
   font-size: 16px;
   border: 2px solid var(--input-border);
   background-color: var(--input-bg);
   color: var(--text-color);
   font-family: 'Poppins', sans-serif;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-
-  html,
-  body {
-    font-size: 16px;
-    padding: 1rem;
-  }
-
-  button {
-    font-size: 14px;
-    padding: 10px 15px;
-  }
-
-  input,
-  select {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  label {
-    font-size: 14px;
-  }
-
-  .container,
-  .home-container,
-  .dashboard-container,
-  .expenseform-container {
-    width: 100%;
-    max-width: 100%;
-    padding: 20px;
-    margin: 10px 0;
-  }
-
-  .filter-container,
-  .expense-details,
-  .sort-container {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .expenses-table,
-  .expense-list {
-    width: 100%;
-    font-size: 14px;
-  }
-
-  .expenses-table th,
-  .expenses-table td {
-    padding: 8px;
-  }
-
-  .expenseform-container input[type="text"],
-  .expenseform-container input[type="number"],
-  .expenseform-container input[type="date"],
-  .expenseform-container select {
-    width: 100%;
-    margin-left: 0;
-    margin-bottom: 15px;
-  }
-
-  .expense-item {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  h1,
-  h2 {
-    font-size: 1.4rem;
-  }
-
-  .user-section,
-  .filter-container,
-  .expense-details {
-    gap: 15px;
-  }
-}
-
-@media (max-width: 480px) {
-
-  body {
-    font-size: 14px;
-  }
-
-  .dashboard-container,
-  .container {
-    padding: 15px;
-  }
-
-  h1,
-  h2 {
-    font-size: 1.2rem;
-  }
-
-  button {
-    font-size: 12px;
-    padding: 8px 12px;
-  }
-
-  input,
-  select,
-  label {
-    font-size: 12px;
-    padding: 8px;
-  }
-
-  .expenses-table th,
-  .expenses-table td {
-    font-size: 12px;
-    padding: 6px;
-  }
-
-  .expense-item {
-    padding: 10px;
-  }
-
-  .expense-description {
-    font-size: 14px;
-  }
 }

@@ -9,7 +9,6 @@
     line-height: 1.8;
 }
 
-/* Balance Row */
 .balance-row {
     font-weight: 600;
     margin-bottom: 15px;
@@ -18,7 +17,6 @@
     align-items: center;
 }
 
-/* Income and Expense Row */
 .income-expense-row {
     display: flex;
     justify-content: space-between;
@@ -27,34 +25,22 @@
     align-items: center;
 }
 
-/* Income Amount */
+/* amount numbers */
 .income-amount {
-    color: #27ae60;
+    color: #3cb371;
     font-weight: 600;
     font-size: 18px;
     line-height: 1;
 }
 
-/* Expense Amount */
 .expense-amount {
-    color: #e74c3c;
+    color: #d64545;
     font-weight: 600;
     font-size: 18px;
     line-height: 1;
 }
 
-/* Balance Amount */
 .balance-amount {
     font-weight: 700;
     font-size: 20px;
-}
-
-/* Form Container */
-.expenseform-container {
-    margin-top: var(--spacing);
-    box-shadow: 0px 4px 10px var(--container-shadow);
-    min-width: 330px;
-    background-color: var(--container-bg);
-    padding: var(--spacing);
-    border-radius: 4px;
 }

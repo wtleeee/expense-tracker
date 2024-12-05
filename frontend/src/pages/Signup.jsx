@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { APIUrl, handleError, handleSuccess } from '../utils';
-import '../styles/Signup.css';
 
 function Signup() {
 
@@ -56,7 +55,8 @@ function Signup() {
     }
     return (
         <div className='container'>
-            <h1>Signup</h1>
+            <h1>Expense Tracker</h1>
+            <h2>Sign up</h2>
             <form onSubmit={handleSignup}>
                 <div>
                     <label htmlFor='name'>Name</label>
