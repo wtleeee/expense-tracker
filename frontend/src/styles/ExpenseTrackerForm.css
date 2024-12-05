@@ -14,7 +14,6 @@
     border-radius: 0;
 }
 
-/* Inputs and Select Elements */
 .expenseform-container input[type="text"],
 .expenseform-container input[type="number"],
 .expenseform-container input[type="date"],
@@ -36,7 +35,6 @@
     font-size: x-large;
 }
 
-/* Labels */
 .expenseform-container label {
     font-weight: 500;
     font-size: 16px;
@@ -44,7 +42,6 @@
     align-self: flex-start;
 }
 
-/* Submit Button */
 .expenseform-container button[type="submit"] {
     width: 100%;
     padding: 16px;
@@ -62,7 +59,6 @@
     border-color: var(--dark-slate);
 }
 
-/* Input Placeholder */
 .expenseform-container input::placeholder {
     font-size: 14px;
     font-style: italic;
@@ -70,7 +66,6 @@
     opacity: 0.6;
 }
 
-/* General container for the entire form */
 .expenseform-container form {
     display: flex;
     flex-direction: column;

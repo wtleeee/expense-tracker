@@ -11,6 +11,7 @@ function Dashboard({ filteredExpenses }) {
   const [showLine, setShowLine] = useState(false);
   const [showPie, setShowPie] = useState(false);
 
+  //remove auto sizing of chartjs charts
   const pieOptions = {
     maintainAspectRatio: false,
   };

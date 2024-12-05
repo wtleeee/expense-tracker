@@ -45,7 +45,7 @@ function Home() {
             .reduce((acc, item) => (acc += item), 0);
         console.log('income: ', income)
 
-        // will show the expenses in poitive
+        // will show the expenses in positive
         const exp = amounts.filter(item => item < 0)
             .reduce((acc, item) => (acc += item), 0) * -1;
         console.log('expense: ', exp)
@@ -112,13 +112,13 @@ function Home() {
             handleError(err);
         }
     }
-    //search query function
+    //handle search query
     const handleSearchChange = (e) => {
         setSearchQuery(e.target.value);
     };
     useEffect(() => {
         let filtered = expenses;
-        // Search query filter
+        // Filter by search query
         if (searchQuery.trim()) {
             filtered = filtered.filter((expense) =>
                 expense.text && expense.text.toLowerCase().includes(searchQuery.toLowerCase())
@@ -155,8 +155,6 @@ function Home() {
         } else if (sortOrder === "dateDesc") {
             filtered = [...filtered].sort((a, b) => new Date(b.date) - new Date(a.date)); // Descending by date
         }
-
-
 
         setFilteredExpenses(filtered);
     }, [filterType, expenses, selectedMonth, selectedYear, sortOrder, searchQuery]);
@@ -237,9 +235,8 @@ function Home() {
                         </div>
                     </div>
                 )}
-
+                {/* filter by category, month, year */}
                 <div className='filter-container'>
-
                     <div className="type-filter">
                         <div>
                             <label htmlFor='filtertype'>Category</label>
@@ -304,6 +301,7 @@ function Home() {
                         </div>
                     </div>
                 </div>
+                {/* sorting expense records*/}
                 <div className="sort-container">
                     <div>
                         <select
@@ -311,7 +309,6 @@ function Home() {
                             onChange={(e) => setSortOrder(e.target.value)}
                             value={sortOrder}
                         >
-                            {/* <option value="">Sorting : Default</option> */}
                             <option value="dateDesc">Sorting : Default - Date (Newest to Oldest)</option>
                             <option value="dateAsc">Date (Oldest to Newest)</option>
                             <option value="asc">Amount Ascending</option>
@@ -319,6 +316,7 @@ function Home() {
                         </select>
                     </div>
                 </div>
+                {/* search bar */}
                 <div className='search-section'>
                     <div className="search-bar">
                         <label>Search by name: </label>
@@ -330,13 +328,9 @@ function Home() {
                         />
                     </div>
                 </div>
-
-
-
                 <ExpensesTable
                     expenses={filteredExpenses}
                     handDeleteExpense={handDeleteExpense} />
-
                 <ToastContainer />
             </div>
         </div>

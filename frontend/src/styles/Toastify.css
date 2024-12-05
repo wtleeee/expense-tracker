@@ -18,14 +18,11 @@
 
 .Toastify__toast--success {
     border-left: 6px solid #3cb371;
-    /* Green success indicator */
     background-color: var(--input-bg);
-    /* Matches your container */
 }
 
 .Toastify__toast--error {
     border-left: 6px solid #d64545;
-    /* Red error indicator */
     background-color: var(--input-bg);
 }
 
@@ -59,7 +56,7 @@ body.dark .Toastify__toast {
     color: inherit;
 }
 
-/* Toast Container Position Overrides (Optional) */
+/* Toast Container Position Overrides */
 .Toastify__toast-container--top-right {
     top: 1rem;
     right: 1rem;

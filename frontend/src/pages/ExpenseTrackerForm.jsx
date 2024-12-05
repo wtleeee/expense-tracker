@@ -30,6 +30,7 @@ function ExpenseTrackerForm({ addExpenses, closeOverlay }) {
     setTimeout(() => {
       setExpenseInfo({ text: '', amount: '', type: 'Other', date: '' });
     }, 1000);
+    // Close the overlay after form submission
     closeOverlay();
   };
 

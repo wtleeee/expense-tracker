@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+// toggler for dark and light mode
 const ThemeToggle = () => {
     const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
 

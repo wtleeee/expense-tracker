@@ -80,6 +80,7 @@
     color: var(--text-color);
 }
 
+/* Overlay */
 .overlay {
     position: fixed;
     top: 0;
