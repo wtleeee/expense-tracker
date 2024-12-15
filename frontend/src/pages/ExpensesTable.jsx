@@ -24,7 +24,7 @@ function ExpensesTable({ expenses, handDeleteExpense }) {
                         >
                             {expense.amount}
                         </div>
-                        <div className='expense-date'>{new Date(expense.date).toLocaleDateString()}</div>
+                        <div className='expense-date'>{new Date(expense.date).toLocaleDateString('en-HK')}</div>
                         <div className='delete-button-container'>
                             <button className='delete-button' onClick={() => handDeleteExpense(expense._id)}>X</button>
                         </div>
